@@ -32,6 +32,30 @@
 		E453457955DF907FCBD117F1 /* Pods_LambdaTimeline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA39CACB677861CF84322FB5 /* Pods_LambdaTimeline.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		B913996E248588E10040F58F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B9139968248588E10040F58F /* CoreImageProject.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B9599DFD2485888200B15C5D;
+			remoteInfo = CoreImageProject;
+		};
+		B9139970248588E10040F58F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B9139968248588E10040F58F /* CoreImageProject.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B9599E132485888300B15C5D;
+			remoteInfo = CoreImageProjectTests;
+		};
+		B9139972248588E10040F58F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B9139968248588E10040F58F /* CoreImageProject.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B9599E1E2485888300B15C5D;
+			remoteInfo = CoreImageProjectUITests;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		33A2B89DE9E21538434BD640 /* Pods-LambdaTimeline.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LambdaTimeline.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LambdaTimeline/Pods-LambdaTimeline.debug.xcconfig"; sourceTree = "<group>"; };
 		46463778216FDE4B00E7FF73 /* LambdaTimeline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LambdaTimeline.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +84,7 @@
 		46D571F72173FC2700E7FF73 /* ImagePostDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePostDetailTableViewController.swift; sourceTree = "<group>"; };
 		5D2CCD6C68779B0A70AC37FA /* Pods-LambdaTimeline.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LambdaTimeline.release.xcconfig"; path = "Pods/Target Support Files/Pods-LambdaTimeline/Pods-LambdaTimeline.release.xcconfig"; sourceTree = "<group>"; };
 		AA39CACB677861CF84322FB5 /* Pods_LambdaTimeline.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LambdaTimeline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9139968248588E10040F58F /* CoreImageProject.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CoreImageProject.xcodeproj; path = CoreImageProject/CoreImageProject.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +115,7 @@
 				46463779216FDE4B00E7FF73 /* Products */,
 				2B7D7DE8669C7C706445FCCC /* Pods */,
 				7C2A25429FC0F968FC1D35E7 /* Frameworks */,
+				B9139968248588E10040F58F /* CoreImageProject.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -211,6 +237,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B9139969248588E10040F58F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B913996F248588E10040F58F /* CoreImageProject.app */,
+				B9139971248588E10040F58F /* CoreImageProjectTests.xctest */,
+				B9139973248588E10040F58F /* CoreImageProjectUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -261,12 +297,42 @@
 			mainGroup = 4646376F216FDE4B00E7FF73;
 			productRefGroup = 46463779216FDE4B00E7FF73 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B9139969248588E10040F58F /* Products */;
+					ProjectRef = B9139968248588E10040F58F /* CoreImageProject.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				46463777216FDE4B00E7FF73 /* LambdaTimeline */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B913996F248588E10040F58F /* CoreImageProject.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = CoreImageProject.app;
+			remoteRef = B913996E248588E10040F58F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B9139971248588E10040F58F /* CoreImageProjectTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CoreImageProjectTests.xctest;
+			remoteRef = B9139970248588E10040F58F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B9139973248588E10040F58F /* CoreImageProjectUITests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CoreImageProjectUITests.xctest;
+			remoteRef = B9139972248588E10040F58F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		46463776216FDE4B00E7FF73 /* Resources */ = {
@@ -517,7 +583,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hazystudios.lambdatimeline;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -536,7 +602,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hazystudios.lambdatimeline;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
