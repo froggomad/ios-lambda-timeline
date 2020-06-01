@@ -37,7 +37,7 @@
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="cwx-YL-wYM">
                                                 <rect key="frame" x="-2" y="24.5" width="304" height="31"/>
                                                 <connections>
-                                                    <action selector="filterSlider1:" destination="BYZ-38-t0r" eventType="valueChanged" id="cgk-EY-X1r"/>
+                                                    <action selector="filterSlider1DidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="cgk-EY-X1r"/>
                                                 </connections>
                                             </slider>
                                         </subviews>
@@ -54,7 +54,7 @@
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8f3-aY-C01">
                                                 <rect key="frame" x="-2" y="24.5" width="304" height="31"/>
                                                 <connections>
-                                                    <action selector="filterSlider2:" destination="BYZ-38-t0r" eventType="valueChanged" id="3lh-y1-PHg"/>
+                                                    <action selector="filterSlider2DidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="3lh-y1-PHg"/>
                                                 </connections>
                                             </slider>
                                         </subviews>
@@ -71,7 +71,7 @@
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="G0r-XH-E9L">
                                                 <rect key="frame" x="-2" y="24.5" width="304" height="31"/>
                                                 <connections>
-                                                    <action selector="filterSlider3:" destination="BYZ-38-t0r" eventType="valueChanged" id="JW7-VS-50X"/>
+                                                    <action selector="filterSlider3DidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="JW7-VS-50X"/>
                                                 </connections>
                                             </slider>
                                         </subviews>
@@ -81,8 +81,8 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="MWI-p2-gp1">
                                 <rect key="frame" x="57" y="394" width="300" height="32"/>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="Blur"/>
+                                    <segment title="Checkerboard"/>
                                 </segments>
                                 <connections>
                                     <action selector="filterControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="b3e-UR-nf5"/>
@@ -105,6 +105,12 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="vRf-12-8I6" id="rfw-cN-Kxb"/>
+                        <outlet property="slider1" destination="cwx-YL-wYM" id="m5c-3Z-SKC"/>
+                        <outlet property="slider1Label" destination="GwN-oo-Y8m" id="3cF-jH-pQN"/>
+                        <outlet property="slider2" destination="8f3-aY-C01" id="JZj-qg-Lmd"/>
+                        <outlet property="slider2Label" destination="iRc-wx-Wad" id="z8i-EI-OWo"/>
+                        <outlet property="slider3" destination="G0r-XH-E9L" id="6m5-lL-Zsj"/>
+                        <outlet property="slider3Label" destination="cKL-m8-mbc" id="08b-4p-SuT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
