@@ -36,6 +36,9 @@
                                             </label>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="cwx-YL-wYM">
                                                 <rect key="frame" x="-2" y="24.5" width="304" height="31"/>
+                                                <connections>
+                                                    <action selector="filterSlider1:" destination="BYZ-38-t0r" eventType="valueChanged" id="cgk-EY-X1r"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                     </stackView>
@@ -50,6 +53,9 @@
                                             </label>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8f3-aY-C01">
                                                 <rect key="frame" x="-2" y="24.5" width="304" height="31"/>
+                                                <connections>
+                                                    <action selector="filterSlider2:" destination="BYZ-38-t0r" eventType="valueChanged" id="3lh-y1-PHg"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                     </stackView>
@@ -64,6 +70,9 @@
                                             </label>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="G0r-XH-E9L">
                                                 <rect key="frame" x="-2" y="24.5" width="304" height="31"/>
+                                                <connections>
+                                                    <action selector="filterSlider3:" destination="BYZ-38-t0r" eventType="valueChanged" id="JW7-VS-50X"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                     </stackView>
@@ -75,6 +84,9 @@
                                     <segment title="First"/>
                                     <segment title="Second"/>
                                 </segments>
+                                <connections>
+                                    <action selector="filterControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="b3e-UR-nf5"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -92,11 +104,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="filterControl" destination="MWI-p2-gp1" id="70Q-DP-XfV"/>
                         <outlet property="imageView" destination="vRf-12-8I6" id="rfw-cN-Kxb"/>
-                        <outlet property="slider1" destination="cwx-YL-wYM" id="ffM-3t-mtb"/>
-                        <outlet property="slider2" destination="8f3-aY-C01" id="QtN-Uy-Z1L"/>
-                        <outlet property="slider3" destination="G0r-XH-E9L" id="ApC-QY-MwT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
