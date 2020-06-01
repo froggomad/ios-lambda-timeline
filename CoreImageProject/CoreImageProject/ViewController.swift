@@ -26,11 +26,21 @@ class ViewController: UIViewController {
 
     }
     @IBAction func filterControl(_ sender: UISegmentedControl) {
-        print(sender.selectedSegmentIndex)
+        switch sender.selectedSegmentIndex {
+        case 0:
+            filter = .gaussianBlur()
+        case 1:
+            filter = .checkerboardGenerator()
+        default:
+            break
+        }
     }
 
     @IBAction func filterSlider1(_ sender: UISlider) {
-        print(sender.value)
+        switch filter.name {
+        default:
+            print(filter.name)
+        }
         updateViews()
     }
 
