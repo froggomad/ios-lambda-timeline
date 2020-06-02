@@ -199,12 +199,15 @@
                                 </subviews>
                             </stackView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="MWI-p2-gp1">
-                                <rect key="frame" x="57" y="394" width="300" height="32"/>
+                                <rect key="frame" x="8" y="394" width="398" height="32"/>
                                 <segments>
                                     <segment title="Blur"/>
-                                    <segment title="Checkerboard"/>
+                                    <segment title="Checker"/>
                                     <segment title="Contrast"/>
+                                    <segment title="Sepia"/>
+                                    <segment title=""/>
                                 </segments>
+                                <color key="selectedSegmentTintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="filterControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="b3e-UR-nf5"/>
                                 </connections>
@@ -212,14 +215,14 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="MWI-p2-gp1" firstAttribute="trailing" secondItem="vRf-12-8I6" secondAttribute="trailing" id="0zE-Xw-L2c"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="KIY-2s-hyi" secondAttribute="bottom" constant="2" id="2xH-E6-BCP"/>
                             <constraint firstItem="KIY-2s-hyi" firstAttribute="top" secondItem="MWI-p2-gp1" secondAttribute="bottom" constant="20" id="Fek-5N-hNL"/>
                             <constraint firstItem="KIY-2s-hyi" firstAttribute="trailing" secondItem="vRf-12-8I6" secondAttribute="trailing" id="KGc-qV-Bl2"/>
-                            <constraint firstItem="MWI-p2-gp1" firstAttribute="leading" secondItem="vRf-12-8I6" secondAttribute="leading" id="Ktc-53-Ait"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MWI-p2-gp1" secondAttribute="trailing" constant="8" id="Ws4-7r-98C"/>
                             <constraint firstItem="KIY-2s-hyi" firstAttribute="leading" secondItem="vRf-12-8I6" secondAttribute="leading" id="dNJ-Vq-Yxh"/>
                             <constraint firstItem="vRf-12-8I6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="jnf-h7-mUB"/>
                             <constraint firstItem="vRf-12-8I6" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="pcS-Dd-i9s"/>
+                            <constraint firstItem="MWI-p2-gp1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="t1W-ZI-7WB"/>
                             <constraint firstItem="MWI-p2-gp1" firstAttribute="top" secondItem="vRf-12-8I6" secondAttribute="bottom" constant="30" id="vqu-jq-j95"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

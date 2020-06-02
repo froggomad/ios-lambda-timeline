@@ -68,6 +68,8 @@ class ViewController: UIViewController {
             setupCheckerboardFilter()
         case "CIColorControls":
             setupColorControlsFilter()
+        case "CISepiaTone":
+            setupSepiaFilter()
         default:
             break
         }
@@ -84,6 +86,9 @@ class ViewController: UIViewController {
         case 2:
             filter = .colorControls()
             setupColorControlsUI()
+        case 3:
+            filter = .sepiaTone()
+            setupSepiaUI()
         default:
             break
         }
@@ -106,7 +111,6 @@ class ViewController: UIViewController {
     }
 
     private func setupGaussianFilter() {
-        let filter: CIFilter = .gaussianBlur()
         filter.setValue(inputImage, forKey: kCIInputImageKey)
         filter.setValue(slider1.value, forKey: kCIInputRadiusKey)
         if let outputImage = filter.outputImage {
@@ -139,7 +143,6 @@ class ViewController: UIViewController {
     private func setupCheckerboardFilter() {
         let color1Key = "inputColor0"
         let color2Key = "inputColor1"
-        let filter: CIFilter = .checkerboardGenerator()
         filter.setValue(color1, forKey: color1Key)
         filter.setValue(color2, forKey: color2Key)
         filter.setValue(slider1.value, forKey: kCIInputWidthKey)
@@ -154,7 +157,6 @@ class ViewController: UIViewController {
     }
 
     //Color Controls
-
     private func setupColorControlsUI() {
         imageView.image = originalImage
         colorStack.isHidden = true
@@ -180,7 +182,6 @@ class ViewController: UIViewController {
     }
 
     private func setupColorControlsFilter() {
-        let filter: CIFilter = .colorControls()
         filter.setValue(inputImage, forKey: kCIInputImageKey)
         filter.setValue(slider1.value, forKey: kCIInputBrightnessKey)
         filter.setValue(slider2.value, forKey: kCIInputContrastKey)
@@ -188,6 +189,31 @@ class ViewController: UIViewController {
         if let outputImage = filter.outputImage {
             let filteredImage = UIImage(ciImage: outputImage)
             imageView.image = filteredImage
+        }
+    }
+
+    //Sepia
+    private func setupSepiaUI() {
+        imageView.image = originalImage
+        colorStack.isHidden = true
+        colorStack2.isHidden = true
+
+        sliderStack1.isHidden = false
+        slider1Label.text = "Intensity"
+        slider1.value = 5
+        slider1.minimumValue = 0
+        slider1.maximumValue = 2
+
+        sliderStack2.isHidden = true
+        sliderStack3.isHidden = true
+    }
+
+    private func setupSepiaFilter() {
+        filter.setValue(inputImage, forKey: kCIInputImageKey)
+        filter.setValue(slider1.value, forKey: kCIInputIntensityKey)
+        if let outputImage = filter.outputImage {
+           let filteredImage = UIImage(ciImage: outputImage)
+           imageView.image = filteredImage
         }
     }
 
