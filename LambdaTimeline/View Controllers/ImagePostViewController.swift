@@ -359,14 +359,14 @@ extension ImagePostViewController {
         slider2Label.text = "Contrast"
         sliderStack2.isHidden = false
         slider2.value = 1
-        slider2.minimumValue = 0
-        slider2.maximumValue = 1
+        slider2.minimumValue = 0.25
+        slider2.maximumValue = 4
 
         slider3Label.text = "Saturation"
         sliderStack3.isHidden = false
         slider3.value = 1
         slider3.minimumValue = 0
-        slider3.maximumValue = 1
+        slider3.maximumValue = 2
     }
 
     func setupColorControlsFilter() {
