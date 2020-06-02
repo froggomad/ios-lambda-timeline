@@ -203,6 +203,7 @@
                                 <segments>
                                     <segment title="Blur"/>
                                     <segment title="Checkerboard"/>
+                                    <segment title="Contrast"/>
                                 </segments>
                                 <connections>
                                     <action selector="filterControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="b3e-UR-nf5"/>

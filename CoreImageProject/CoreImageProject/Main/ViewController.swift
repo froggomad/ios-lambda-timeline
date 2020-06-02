@@ -51,9 +51,6 @@ class ViewController: UIViewController {
     var color1: CIColor = CIColor(color: UIColor.black)
     var color2: CIColor = CIColor(color: UIColor.white)
 
-    ///commonly used CIFilter Key
-    private let inputImageKey = "inputImage"
-
     // MARK: - View Lifecycle -
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +66,8 @@ class ViewController: UIViewController {
             setupGaussianFilter()
         case "CICheckerboardGenerator":
             setupCheckerboardFilter()
+        case "CIColorControls":
+            setupColorControlsFilter()
         default:
             break
         }
@@ -82,6 +81,9 @@ class ViewController: UIViewController {
         case 1:
             filter = .checkerboardGenerator()
             setupCheckerboardUI()
+        case 2:
+            filter = .colorControls()
+            setupColorControlsUI()
         default:
             break
         }
@@ -91,7 +93,7 @@ class ViewController: UIViewController {
 
     //Guassian Blur
     private func setupGaussianUI() {
-
+        imageView.image = originalImage
         colorStack.isHidden = true
         colorStack2.isHidden = true
         slider1Label.text = "Radius"
@@ -99,26 +101,25 @@ class ViewController: UIViewController {
         slider1.value = 1
         slider1.minimumValue = 0
         slider1.maximumValue = 10
-
         sliderStack2.isHidden = true
         sliderStack3.isHidden = true
     }
 
     private func setupGaussianFilter() {
-        let inputRadiusKey = "inputRadius"
         let filter: CIFilter = .gaussianBlur()
-        filter.setValue(inputImage, forKey: inputImageKey)
-        filter.setValue(slider1.value, forKey: inputRadiusKey)
+        filter.setValue(inputImage, forKey: kCIInputRadiusKey)
+        filter.setValue(slider1.value, forKey: kCIInputRadiusKey)
         if let outputImage = filter.outputImage {
             let filteredImage = UIImage(ciImage: outputImage)
             imageView.image = filteredImage
         }
     }
 
-    //Checkerboard
+    //Checkerboard Generator
     private func setupCheckerboardUI() {
         colorStack.isHidden = false
         colorStack2.isHidden = false
+
         slider1Label.text = "Square Width"
         sliderStack1.isHidden = false
         slider1.value = 80
@@ -138,15 +139,12 @@ class ViewController: UIViewController {
     private func setupCheckerboardFilter() {
         let color1Key = "inputColor0"
         let color2Key = "inputColor1"
-        let widthKey = "inputWidth"
-        let sharpnessKey = "inputSharpness"
-        let centerKey = "inputCenter"
         let filter: CIFilter = .checkerboardGenerator()
         filter.setValue(color1, forKey: color1Key)
         filter.setValue(color2, forKey: color2Key)
-        filter.setValue(slider1.value, forKey: widthKey)
-        filter.setValue(slider2.value, forKey: sharpnessKey)
-        filter.setValue((CIVector(cgPoint: (imageView.center))), forKey: centerKey)
+        filter.setValue(slider1.value, forKey: kCIInputWidthKey)
+        filter.setValue(slider2.value, forKey: kCIInputSharpnessKey)
+        filter.setValue((CIVector(cgPoint: (imageView.center))), forKey: kCIInputCenterKey)
 
         if let outputImage = filter.outputImage,
             let image = originalImage,
@@ -155,6 +153,45 @@ class ViewController: UIViewController {
         }
     }
 
+    //Color Controls
+
+    private func setupColorControlsUI() {
+        imageView.image = originalImage
+        colorStack.isHidden = true
+        colorStack2.isHidden = true
+
+        slider1Label.text = "Brightness"
+        sliderStack1.isHidden = false
+        slider1.value = 0
+        slider1.minimumValue = -1
+        slider1.maximumValue = 1
+
+        slider2Label.text = "Contrast"
+        sliderStack2.isHidden = false
+        slider2.value = 1
+        slider2.minimumValue = 0
+        slider2.maximumValue = 1
+
+        slider3Label.text = "Saturation"
+        sliderStack3.isHidden = false
+        slider3.value = 1
+        slider3.minimumValue = 0
+        slider3.maximumValue = 1
+    }
+
+    private func setupColorControlsFilter() {
+        let filter: CIFilter = .colorControls()
+        filter.setValue(inputImage, forKey: kCIInputImageKey)
+        filter.setValue(slider1.value, forKey: kCIInputBrightnessKey)
+        filter.setValue(slider2.value, forKey: kCIInputContrastKey)
+        filter.setValue(slider3.value, forKey: kCIInputSaturationKey)
+        if let outputImage = filter.outputImage {
+            let filteredImage = UIImage(ciImage: outputImage)
+            imageView.image = filteredImage
+        }
+    }
+
+    // MARK: - Actions -
     @IBAction func color1WasTapped(_ sender: UIButton) {
         color1 = CIColor(color: sender.backgroundColor ?? .black)
         updateViews()
