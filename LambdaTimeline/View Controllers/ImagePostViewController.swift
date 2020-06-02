@@ -9,7 +9,6 @@
 import UIKit
 import Photos
 import CoreImage
-import CoreImage.CIFilterBuiltins
 
 class ImagePostViewController: ShiftableViewController {
     // MARK: - Outlets -
@@ -40,12 +39,12 @@ class ImagePostViewController: ShiftableViewController {
     // MARK: - Properties -
     var postController: PostController!
     var post: Post?
-    var imageData: Data? //this doesn't appear to be in use
+    var imageData: Data?
 
     var color1: CIColor = CIColor(color: UIColor.black)
     var color2: CIColor = CIColor(color: UIColor.white)
     private let context = CIContext(options: nil)
-    private var filter: CIFilter = .gaussianBlur() {
+    private var filter: CIFilter = CIFilter(name: Filter.gaussian.rawValue)! {
         didSet {
             updatePhoto()
         }

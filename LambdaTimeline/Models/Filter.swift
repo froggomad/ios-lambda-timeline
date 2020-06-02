@@ -6,8 +6,7 @@
 //  Copyright © 2020 Lambda School. All rights reserved.
 //
 
-import CoreImage
-import CoreImage.CIFilterBuiltins
+import Foundation
 
 enum Filter: String, CaseIterable {
     case gaussian = "CIGaussianBlur"
