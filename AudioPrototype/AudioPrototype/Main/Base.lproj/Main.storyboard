@@ -44,7 +44,10 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNq-93-Dch">
                                                 <rect key="frame" x="0.0" y="0.0" width="158" height="22"/>
                                                 <state key="normal" image="play.fill" catalog="system"/>
-                                                <state key="selected" image="pause.fill"/>
+                                                <state key="selected" image="pause.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="playButtonWasTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bjo-oT-JBV"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1pn-0j-fca">
                                                 <rect key="frame" x="216" y="0.0" width="158" height="22"/>
@@ -65,6 +68,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="playButton" destination="bNq-93-Dch" id="a7U-NY-Ugc"/>
+                        <outlet property="recordButton" destination="1pn-0j-fca" id="ObW-Hz-6iy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -73,7 +80,7 @@
     </scenes>
     <resources>
         <image name="mic.fill" catalog="system" width="108" height="128"/>
-        <image name="pause.fill" width="128" height="128"/>
+        <image name="pause.fill" catalog="system" width="116" height="128"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
         <image name="stop.fill" catalog="system" width="128" height="113"/>
     </resources>

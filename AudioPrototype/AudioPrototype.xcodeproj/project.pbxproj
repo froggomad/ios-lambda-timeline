@@ -15,6 +15,8 @@
 		B94B319A2486E65C00F65BCB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94B31982486E65C00F65BCB /* LaunchScreen.storyboard */; };
 		B94B31A52486E65C00F65BCB /* AudioPrototypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94B31A42486E65C00F65BCB /* AudioPrototypeTests.swift */; };
 		B94B31B02486E65C00F65BCB /* AudioPrototypeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94B31AF2486E65C00F65BCB /* AudioPrototypeUITests.swift */; };
+		B94B31CF2486EBD200F65BCB /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94B31CE2486EBD200F65BCB /* AudioPlayer.swift */; };
+		B94B31D12486EE7100F65BCB /* kid_laugh.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B94B31D02486EE7100F65BCB /* kid_laugh.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		B94B31AB2486E65C00F65BCB /* AudioPrototypeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AudioPrototypeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B94B31AF2486E65C00F65BCB /* AudioPrototypeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPrototypeUITests.swift; sourceTree = "<group>"; };
 		B94B31B12486E65C00F65BCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B94B31CE2486EBD200F65BCB /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		B94B31D02486EE7100F65BCB /* kid_laugh.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = kid_laugh.mp3; path = AudioPrototype/kid_laugh.mp3; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,11 +133,21 @@
 		B94B31CC2486E78200F65BCB /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				B94B31D02486EE7100F65BCB /* kid_laugh.mp3 */,
+				B94B31CD2486EBC200F65BCB /* Model Controllers */,
 				B94B31912486E65900F65BCB /* ViewController.swift */,
 				B94B31932486E65900F65BCB /* Main.storyboard */,
 				B94B31962486E65C00F65BCB /* Assets.xcassets */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		B94B31CD2486EBC200F65BCB /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B94B31CE2486EBD200F65BCB /* AudioPlayer.swift */,
+			);
+			path = "Model Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +257,7 @@
 				B94B319A2486E65C00F65BCB /* LaunchScreen.storyboard in Resources */,
 				B94B31972486E65C00F65BCB /* Assets.xcassets in Resources */,
 				B94B31952486E65900F65BCB /* Main.storyboard in Resources */,
+				B94B31D12486EE7100F65BCB /* kid_laugh.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +285,7 @@
 				B94B31922486E65900F65BCB /* ViewController.swift in Sources */,
 				B94B318E2486E65900F65BCB /* AppDelegate.swift in Sources */,
 				B94B31902486E65900F65BCB /* SceneDelegate.swift in Sources */,
+				B94B31CF2486EBD200F65BCB /* AudioPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
