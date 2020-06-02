@@ -70,7 +70,7 @@ class ViewController: UIViewController {
             setupColorControlsFilter()
         case "CISepiaTone":
             setupSepiaFilter()
-        case "CIBloom":
+        case "CIBloom"
             setupBloomFilter()
         default:
             break
