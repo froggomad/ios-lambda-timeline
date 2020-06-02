@@ -99,11 +99,9 @@
 		B94B318C2486E65900F65BCB /* AudioPrototype */ = {
 			isa = PBXGroup;
 			children = (
+				B94B31CC2486E78200F65BCB /* Main */,
 				B94B318D2486E65900F65BCB /* AppDelegate.swift */,
 				B94B318F2486E65900F65BCB /* SceneDelegate.swift */,
-				B94B31912486E65900F65BCB /* ViewController.swift */,
-				B94B31932486E65900F65BCB /* Main.storyboard */,
-				B94B31962486E65C00F65BCB /* Assets.xcassets */,
 				B94B31982486E65C00F65BCB /* LaunchScreen.storyboard */,
 				B94B319B2486E65C00F65BCB /* Info.plist */,
 			);
@@ -126,6 +124,16 @@
 				B94B31B12486E65C00F65BCB /* Info.plist */,
 			);
 			path = AudioPrototypeUITests;
+			sourceTree = "<group>";
+		};
+		B94B31CC2486E78200F65BCB /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B94B31912486E65900F65BCB /* ViewController.swift */,
+				B94B31932486E65900F65BCB /* Main.storyboard */,
+				B94B31962486E65C00F65BCB /* Assets.xcassets */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
