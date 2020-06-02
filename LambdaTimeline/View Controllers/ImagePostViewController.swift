@@ -341,10 +341,8 @@ extension ImagePostViewController {
     func setupGaussianFilter() {
         filter.setValue(inputImage, forKey: kCIInputImageKey)
         filter.setValue(slider1.value, forKey: kCIInputRadiusKey)
-        if let outputImage = filter.outputImage {
-            let filteredImage = UIImage(ciImage: outputImage)
-            imageView.image = filteredImage
-        }
+
+        filterImage()
     }
 
     //Checkerboard Generator
@@ -377,11 +375,7 @@ extension ImagePostViewController {
         filter.setValue(slider2.value, forKey: kCIInputSharpnessKey)
         filter.setValue((CIVector(cgPoint: (imageView.center))), forKey: kCIInputCenterKey)
 
-        if let outputImage = filter.outputImage,
-            let image = scaledImage,
-            let filteredImage = context.createCGImage(outputImage, from: CGRect(origin: .zero, size: image.size)) {
-            imageView.image = UIImage(cgImage: filteredImage)
-        }
+        filterImage()
     }
 
     //Color Controls
@@ -414,10 +408,8 @@ extension ImagePostViewController {
         filter.setValue(slider1.value, forKey: kCIInputBrightnessKey)
         filter.setValue(slider2.value, forKey: kCIInputContrastKey)
         filter.setValue(slider3.value, forKey: kCIInputSaturationKey)
-        if let outputImage = filter.outputImage {
-            let filteredImage = UIImage(ciImage: outputImage)
-            imageView.image = filteredImage
-        }
+
+        filterImage()
     }
 
     //Sepia
@@ -439,10 +431,7 @@ extension ImagePostViewController {
     func setupSepiaFilter() {
         filter.setValue(inputImage, forKey: kCIInputImageKey)
         filter.setValue(slider1.value, forKey: kCIInputIntensityKey)
-        if let outputImage = filter.outputImage {
-            let filteredImage = UIImage(ciImage: outputImage)
-            imageView.image = filteredImage
-        }
+        filterImage()
     }
 
     //Bloom
@@ -468,9 +457,14 @@ extension ImagePostViewController {
         filter.setValue(inputImage, forKey: kCIInputImageKey)
         filter.setValue(slider1.value, forKey: kCIInputIntensityKey)
         filter.setValue(slider2.value, forKey: kCIInputRadiusKey)
-        if let outputImage = filter.outputImage {
-            let filteredImage = UIImage(ciImage: outputImage)
-            imageView.image = filteredImage
+        filterImage()
+    }
+
+    private func filterImage() {
+        if let outputImage = filter.outputImage,
+            let image = scaledImage,
+            let filteredImage = context.createCGImage(outputImage, from: CGRect(origin: .zero, size: image.size)) {
+            imageView.image = UIImage(cgImage: filteredImage)
         }
     }
 }
