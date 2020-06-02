@@ -40,7 +40,7 @@ class ImagePostViewController: ShiftableViewController {
     // MARK: - Properties -
     var postController: PostController!
     var post: Post?
-    var imageData: Data?
+    var imageData: Data? //this doesn't appear to be in use
 
     var color1: CIColor = CIColor(color: UIColor.black)
     var color2: CIColor = CIColor(color: UIColor.white)
@@ -135,6 +135,7 @@ class ImagePostViewController: ShiftableViewController {
                 title = "New Post"
                 return
         }
+
         
         title = post?.title
         
@@ -143,6 +144,24 @@ class ImagePostViewController: ShiftableViewController {
         imageView.image = image
         
         chooseImageButton.setTitle("", for: [])
+        
+        //Ask user to add filter to existing photo
+        Alert.withYesNoPrompt(
+            title: "Filter This Photo?",
+            message: "Would you like to add a filter?",
+            vc: self) { (filterChosen) in
+                if filterChosen {
+                    self.mainFilterStack.isHidden = false
+                    self.pickedImage = image
+                    guard let scaledImage = self.scaledImage else { return }
+                    self.setImageViewHeight(with: scaledImage.ratio)
+                    self.setupGaussianUI()
+                    self.setupGaussianFilter()
+                } else {
+                    self.imageView.image = image
+                    self.setImageViewHeight(with: image.ratio)
+                }
+        }
     }
     
     private func presentImagePickerController() {
