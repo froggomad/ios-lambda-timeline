@@ -70,6 +70,8 @@ class ViewController: UIViewController {
             setupColorControlsFilter()
         case "CISepiaTone":
             setupSepiaFilter()
+        case "CIBloom":
+            setupBloomFilter()
         default:
             break
         }
@@ -89,6 +91,9 @@ class ViewController: UIViewController {
         case 3:
             filter = .sepiaTone()
             setupSepiaUI()
+        case 4:
+            filter = .bloom()
+            setupBloomUI()
         default:
             break
         }
@@ -214,6 +219,35 @@ class ViewController: UIViewController {
         if let outputImage = filter.outputImage {
            let filteredImage = UIImage(ciImage: outputImage)
            imageView.image = filteredImage
+        }
+    }
+
+    //Bloom
+    private func setupBloomUI() {
+        imageView.image = originalImage
+        colorStack.isHidden = true
+        colorStack2.isHidden = true
+
+        sliderStack1.isHidden = false
+        slider1Label.text = "Intensity"
+        slider1.value = 0.5
+        slider1.minimumValue = 0
+        slider1.maximumValue = 1
+
+        sliderStack2.isHidden = false
+        slider2Label.text = "Radius"
+        slider2.value = 5
+        slider2.minimumValue = 0
+        slider2.maximumValue = 10
+    }
+
+    private func setupBloomFilter() {
+        filter.setValue(inputImage, forKey: kCIInputImageKey)
+        filter.setValue(slider1.value, forKey: kCIInputIntensityKey)
+        filter.setValue(slider2.value, forKey: kCIInputRadiusKey)
+        if let outputImage = filter.outputImage {
+            let filteredImage = UIImage(ciImage: outputImage)
+            imageView.image = filteredImage
         }
     }
 
