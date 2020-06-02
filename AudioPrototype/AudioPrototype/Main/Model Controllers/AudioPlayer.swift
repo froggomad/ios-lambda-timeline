@@ -10,27 +10,50 @@ import AVFoundation
 
 class AudioPlayer {
     var delegate: AVAudioPlayerDelegate?
+    var timer: Timer?
 
     init(delegate: AVAudioPlayerDelegate) {
         self.delegate = delegate
         loadAudio()
     }
 
+    deinit {
+        cancelTimer()
+    }
+
+    func startTimer() {
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: 0.030, repeats: true) { [weak self] (_) in
+            guard let self = self else { return }
+            if let delegate = self.delegate as? AudioPrototypeViewController {
+                delegate.updateViews()
+            }
+        }
+    }
+
+    func cancelTimer() {
+        timer?.invalidate()
+        timer = nil
+        if let delegate = self.delegate as? AudioPrototypeViewController {
+            delegate.updateViews()
+        }
+    }
+
     ///the active Audio Player
-    var audioPlayer: AVAudioPlayer? {
+    var player: AVAudioPlayer? {
         didSet {
-            audioPlayer?.delegate = delegate
+            player?.delegate = delegate
         }
     }
 
     var isPlaying: Bool {
-        return audioPlayer?.isPlaying ?? false
+        return player?.isPlaying ?? false
     }
 
     func loadAudio() {
         guard let songURL = Bundle.main.url(forResource: "kid_laugh", withExtension: "mp3") else { return }
         do {
-            audioPlayer = try AVAudioPlayer(contentsOf: songURL)
+            player = try AVAudioPlayer(contentsOf: songURL)
         } catch let audioError {
             print("Error loading audio file: \(audioError)")
         }
@@ -46,14 +69,12 @@ class AudioPlayer {
     }
 
     func play() {
-        audioPlayer?.play()
-//        startTimer()
-//        updateViews()
+        player?.play()
+        startTimer()
     }
 
     func pause() {
-        audioPlayer?.pause()
-//        cancelTimer()
-//        updateViews()
+        player?.pause()
+        cancelTimer()
     }
 }
