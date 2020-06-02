@@ -99,19 +99,19 @@ class ImagePostViewController: ShiftableViewController {
     @IBAction func filterControl(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            filter = .gaussianBlur()
+            filter = CIFilter(name: Filter.gaussian.rawValue)!
             setupGaussianUI()
         case 1:
-            filter = .checkerboardGenerator()
+            filter = CIFilter(name: Filter.checkerboard.rawValue)!
             setupCheckerboardUI()
         case 2:
-            filter = .colorControls()
+            filter = CIFilter(name: Filter.contrast.rawValue)!
             setupColorControlsUI()
         case 3:
-            filter = .sepiaTone()
+            filter = CIFilter(name: Filter.sepia.rawValue)!
             setupSepiaUI()
         case 4:
-            filter = .bloom()
+            filter = CIFilter(name: Filter.bloom.rawValue)!
             setupBloomUI()
         default:
             break
@@ -144,7 +144,7 @@ class ImagePostViewController: ShiftableViewController {
         imageView.image = image
         
         chooseImageButton.setTitle("", for: [])
-        
+
         //Ask user to add filter to existing photo
         Alert.withYesNoPrompt(
             title: "Filter This Photo?",
