@@ -7,19 +7,19 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Audio Prototype View Controller-->
+        <!--Audio Recorder Prototype View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="AudioPrototypeViewController" customModule="AudioPrototype" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="AudioRecorderPrototypeViewController" customModule="AudioPrototype" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="t57-Bb-o7d">
-                                <rect key="frame" x="14" y="418" width="390" height="60"/>
+                                <rect key="frame" x="14" y="418" width="394" height="60"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zmb-Ug-vZQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOB-Yt-1dm">
                                                 <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
@@ -28,10 +28,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="MBH-Ph-dCe">
-                                                <rect key="frame" x="52" y="0.0" width="286" height="31"/>
+                                                <rect key="frame" x="52" y="0.0" width="290" height="31"/>
                                             </slider>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvK-q9-46l">
-                                                <rect key="frame" x="344" y="0.0" width="46" height="30"/>
+                                                <rect key="frame" x="348" y="0.0" width="46" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -39,10 +39,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="58" translatesAutoresizingMaskIntoConstraints="NO" id="ohp-0h-fJw">
-                                        <rect key="frame" x="0.0" y="38" width="390" height="22"/>
+                                        <rect key="frame" x="0.0" y="38" width="394" height="22"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kew-Ih-osj">
-                                                <rect key="frame" x="0.0" y="0.0" width="390" height="22"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="394" height="22"/>
                                                 <state key="normal" image="play.fill" catalog="system"/>
                                                 <state key="selected" image="pause.fill" catalog="system"/>
                                                 <connections>

@@ -34,7 +34,7 @@ class AudioPlayer {
     func cancelTimer() {
         timer?.invalidate()
         timer = nil
-        if let delegate = self.delegate as? AudioPrototypeViewController {
+        if let delegate = self.delegate as? CommentPlaybackCell {
             delegate.updateViews()
         }
     }
