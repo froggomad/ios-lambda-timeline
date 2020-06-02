@@ -58,6 +58,27 @@
 			remoteGlobalIDString = B9599E1E2485888300B15C5D;
 			remoteInfo = CoreImageProjectUITests;
 		};
+		B94B31C32486E65D00F65BCB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B94B31BD2486E65C00F65BCB /* AudioPrototype.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B94B318A2486E65900F65BCB;
+			remoteInfo = AudioPrototype;
+		};
+		B94B31C52486E65D00F65BCB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B94B31BD2486E65C00F65BCB /* AudioPrototype.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B94B31A02486E65C00F65BCB;
+			remoteInfo = AudioPrototypeTests;
+		};
+		B94B31C72486E65D00F65BCB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B94B31BD2486E65C00F65BCB /* AudioPrototype.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B94B31AB2486E65C00F65BCB;
+			remoteInfo = AudioPrototypeUITests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +111,7 @@
 		AA39CACB677861CF84322FB5 /* Pods_LambdaTimeline.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LambdaTimeline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9139968248588E10040F58F /* CoreImageProject.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CoreImageProject.xcodeproj; path = CoreImageProject/CoreImageProject.xcodeproj; sourceTree = "<group>"; };
 		B94B317A24867E9600F65BCB /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		B94B31BD2486E65C00F65BCB /* AudioPrototype.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AudioPrototype.xcodeproj; path = AudioPrototype/AudioPrototype.xcodeproj; sourceTree = "<group>"; };
 		B967C7FB2485F1640084245E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B967C8002486088E0084245E /* UIImage+Scaling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Scaling.swift"; sourceTree = "<group>"; };
 		B967C80524860EFB0084245E /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -124,6 +146,7 @@
 				2B7D7DE8669C7C706445FCCC /* Pods */,
 				7C2A25429FC0F968FC1D35E7 /* Frameworks */,
 				B9139968248588E10040F58F /* CoreImageProject.xcodeproj */,
+				B94B31BD2486E65C00F65BCB /* AudioPrototype.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -259,6 +282,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		B94B31BE2486E65C00F65BCB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B94B31C42486E65D00F65BCB /* AudioPrototype.app */,
+				B94B31C62486E65D00F65BCB /* AudioPrototypeTests.xctest */,
+				B94B31C82486E65D00F65BCB /* AudioPrototypeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		B967C80424860EF20084245E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -319,6 +352,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = B94B31BE2486E65C00F65BCB /* Products */;
+					ProjectRef = B94B31BD2486E65C00F65BCB /* AudioPrototype.xcodeproj */;
+				},
+				{
 					ProductGroup = B9139969248588E10040F58F /* Products */;
 					ProjectRef = B9139968248588E10040F58F /* CoreImageProject.xcodeproj */;
 				},
@@ -350,6 +387,27 @@
 			fileType = wrapper.cfbundle;
 			path = CoreImageProjectUITests.xctest;
 			remoteRef = B9139972248588E10040F58F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B94B31C42486E65D00F65BCB /* AudioPrototype.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = AudioPrototype.app;
+			remoteRef = B94B31C32486E65D00F65BCB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B94B31C62486E65D00F65BCB /* AudioPrototypeTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AudioPrototypeTests.xctest;
+			remoteRef = B94B31C52486E65D00F65BCB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B94B31C82486E65D00F65BCB /* AudioPrototypeUITests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AudioPrototypeUITests.xctest;
+			remoteRef = B94B31C72486E65D00F65BCB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
