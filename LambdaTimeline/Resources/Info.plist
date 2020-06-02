@@ -21,9 +21,11 @@
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.googleusercontent.apps.68797774185-mbot3822rfpv06hi6vmd6dmekhat3259</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>Copy-paste-your-REVERSED_CLIENT_ID-from-GoogleService-Info.plist</string>
+				<string>com.googleusercontent.apps.68797774185-mbot3822rfpv06hi6vmd6dmekhat3259</string>
 			</array>
 		</dict>
 	</array>
