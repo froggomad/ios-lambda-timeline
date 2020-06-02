@@ -107,7 +107,7 @@ class ViewController: UIViewController {
 
     private func setupGaussianFilter() {
         let filter: CIFilter = .gaussianBlur()
-        filter.setValue(inputImage, forKey: kCIInputRadiusKey)
+        filter.setValue(inputImage, forKey: kCIInputImageKey)
         filter.setValue(slider1.value, forKey: kCIInputRadiusKey)
         if let outputImage = filter.outputImage {
             let filteredImage = UIImage(ciImage: outputImage)
