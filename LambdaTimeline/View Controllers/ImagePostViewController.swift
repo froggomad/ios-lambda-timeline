@@ -462,7 +462,9 @@ extension ImagePostViewController {
         if let outputImage = filter.outputImage,
             let image = scaledImage,
             let filteredImage = context.createCGImage(outputImage, from: CGRect(origin: .zero, size: image.size)) {
-            imageView.image = UIImage(cgImage: filteredImage)
+            DispatchQueue.main.async {
+                imageView.image = UIImage(cgImage: filteredImage)
+            }
         }
     }
 }
