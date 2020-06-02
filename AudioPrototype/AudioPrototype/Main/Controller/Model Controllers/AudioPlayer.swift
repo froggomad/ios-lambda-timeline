@@ -25,7 +25,7 @@ class AudioPlayer {
         timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 0.030, repeats: true) { [weak self] (_) in
             guard let self = self else { return }
-            if let delegate = self.delegate as? AudioPrototypeViewController {
+            if let delegate = self.delegate as? CommentPlaybackCell {
                 delegate.updateViews()
             }
         }

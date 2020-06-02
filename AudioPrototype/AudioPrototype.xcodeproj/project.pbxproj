@@ -17,6 +17,8 @@
 		B94B31B02486E65C00F65BCB /* AudioPrototypeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94B31AF2486E65C00F65BCB /* AudioPrototypeUITests.swift */; };
 		B94B31CF2486EBD200F65BCB /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94B31CE2486EBD200F65BCB /* AudioPlayer.swift */; };
 		B94B31D12486EE7100F65BCB /* kid_laugh.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B94B31D02486EE7100F65BCB /* kid_laugh.mp3 */; };
+		B94B31D62486FAB700F65BCB /* CommentPlaybackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94B31D52486FAB700F65BCB /* CommentPlaybackCell.swift */; };
+		B94B31D82487019B00F65BCB /* AudioCommentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94B31D72487019B00F65BCB /* AudioCommentTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		B94B31B12486E65C00F65BCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B94B31CE2486EBD200F65BCB /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		B94B31D02486EE7100F65BCB /* kid_laugh.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = kid_laugh.mp3; path = AudioPrototype/kid_laugh.mp3; sourceTree = SOURCE_ROOT; };
+		B94B31D52486FAB700F65BCB /* CommentPlaybackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentPlaybackCell.swift; sourceTree = "<group>"; };
+		B94B31D72487019B00F65BCB /* AudioCommentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioCommentTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,9 +137,9 @@
 		B94B31CC2486E78200F65BCB /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				B94B31D42486FA7900F65BCB /* View */,
+				B94B31D32486FA6D00F65BCB /* Controller */,
 				B94B31D02486EE7100F65BCB /* kid_laugh.mp3 */,
-				B94B31CD2486EBC200F65BCB /* Model Controllers */,
-				B94B31912486E65900F65BCB /* AudioPrototypeViewController.swift */,
 				B94B31932486E65900F65BCB /* Main.storyboard */,
 				B94B31962486E65C00F65BCB /* Assets.xcassets */,
 			);
@@ -148,6 +152,32 @@
 				B94B31CE2486EBD200F65BCB /* AudioPlayer.swift */,
 			);
 			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		B94B31D22486FA6400F65BCB /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B94B31912486E65900F65BCB /* AudioPrototypeViewController.swift */,
+				B94B31D72487019B00F65BCB /* AudioCommentTableViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		B94B31D32486FA6D00F65BCB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B94B31CD2486EBC200F65BCB /* Model Controllers */,
+				B94B31D22486FA6400F65BCB /* View Controllers */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B94B31D42486FA7900F65BCB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B94B31D52486FAB700F65BCB /* CommentPlaybackCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,8 +312,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B94B31D82487019B00F65BCB /* AudioCommentTableViewController.swift in Sources */,
 				B94B31922486E65900F65BCB /* AudioPrototypeViewController.swift in Sources */,
 				B94B318E2486E65900F65BCB /* AppDelegate.swift in Sources */,
+				B94B31D62486FAB700F65BCB /* CommentPlaybackCell.swift in Sources */,
 				B94B31902486E65900F65BCB /* SceneDelegate.swift in Sources */,
 				B94B31CF2486EBD200F65BCB /* AudioPlayer.swift in Sources */,
 			);
