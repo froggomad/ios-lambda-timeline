@@ -54,6 +54,7 @@ class ImagePostViewController: ShiftableViewController {
         didSet {
             guard let originalImage = pickedImage else {
                 scaledImage = nil
+                alertUnknownEdgeCase()
                 return
             }
 
@@ -72,23 +73,31 @@ class ImagePostViewController: ShiftableViewController {
 
     private var inputImage: CIImage? {
         guard let originalImage = scaledImage,
-            let cgImage = originalImage.cgImage else { return nil }
-            let ciImage = CIImage(cgImage: cgImage)
+            let cgImage = originalImage.cgImage else {
+                alertUnknownEdgeCase()
+                return nil
+        }
+        let ciImage = CIImage(cgImage: cgImage)
         return ciImage
     }
 
     private func updatePhoto() {
-        guard !mainFilterStack.isHidden else { return }
+        //it's easy to miss something when using a bool to switch states
+        //and there's no point in setting up a filter with no UI
+        guard !mainFilterStack.isHidden else {
+            alertUnknownEdgeCase()
+            return
+        }
         switch filter.name {
-        case "CIGaussianBlur":
+        case Filter.gaussian.rawValue:
             setupGaussianFilter()
-        case "CICheckerboardGenerator":
+        case Filter.checkerboard.rawValue:
             setupCheckerboardFilter()
-        case "CIColorControls":
+        case Filter.contrast.rawValue:
             setupColorControlsFilter()
-        case "CISepiaTone":
+        case Filter.sepia.rawValue:
             setupSepiaFilter()
-        case "CIBloom":
+        case Filter.bloom.rawValue:
             setupBloomFilter()
         default:
             break
@@ -96,21 +105,17 @@ class ImagePostViewController: ShiftableViewController {
     }
 
     @IBAction func filterControl(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 0:
-            filter = CIFilter(name: Filter.gaussian.rawValue)!
+        filter = CIFilter(name: Filter.allCases[sender.selectedSegmentIndex].rawValue)!
+        switch filter.name {
+        case Filter.gaussian.rawValue:
             setupGaussianUI()
-        case 1:
-            filter = CIFilter(name: Filter.checkerboard.rawValue)!
+        case Filter.checkerboard.rawValue:
             setupCheckerboardUI()
-        case 2:
-            filter = CIFilter(name: Filter.contrast.rawValue)!
+        case Filter.contrast.rawValue:
             setupColorControlsUI()
-        case 3:
-            filter = CIFilter(name: Filter.sepia.rawValue)!
+        case Filter.sepia.rawValue:
             setupSepiaUI()
-        case 4:
-            filter = CIFilter(name: Filter.bloom.rawValue)!
+        case Filter.bloom.rawValue:
             setupBloomUI()
         default:
             break
@@ -152,7 +157,10 @@ class ImagePostViewController: ShiftableViewController {
                 if filterChosen {
                     self.mainFilterStack.isHidden = false
                     self.pickedImage = image
-                    guard let scaledImage = self.scaledImage else { return }
+                    guard let scaledImage = self.scaledImage else {
+                        self.alertUnknownEdgeCase()
+                        return
+                    }
                     self.setImageViewHeight(with: scaledImage.ratio)
                     self.setupGaussianUI()
                     self.setupGaussianFilter()
@@ -162,7 +170,8 @@ class ImagePostViewController: ShiftableViewController {
                 }
         }
     }
-    
+
+    // MARK: - Image Picker -
     private func presentImagePickerController() {
         
         guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
@@ -234,11 +243,18 @@ class ImagePostViewController: ShiftableViewController {
         presentImagePickerController()
     }
     
-    func setImageViewHeight(with aspectRatio: CGFloat) {
+    private func setImageViewHeight(with aspectRatio: CGFloat) {
         
         imageHeightConstraint.constant = imageView.frame.size.width * aspectRatio
         
         view.layoutSubviews()
+    }
+
+    private func alertUnknownEdgeCase() {
+        presentInformationalAlertController(
+            title: "Oops!",
+            message: "An unknown error occurred. Please go back and try again."
+        )
     }
     
     // MARK: - Actions -
@@ -274,7 +290,10 @@ extension ImagePostViewController: UIImagePickerControllerDelegate, UINavigation
         
         picker.dismiss(animated: true, completion: nil)
         
-        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
+            alertUnknownEdgeCase()
+            return
+        }
         Alert.withYesNoPrompt(
             title: "Filter This Photo?",
             message: "Would you like to add a filter?",
@@ -282,7 +301,10 @@ extension ImagePostViewController: UIImagePickerControllerDelegate, UINavigation
                 if filterChosen {
                     self.mainFilterStack.isHidden = false
                     self.pickedImage = image
-                    guard let scaledImage = self.scaledImage else { return }
+                    guard let scaledImage = self.scaledImage else {
+                        self.alertUnknownEdgeCase()
+                        return
+                    }
                     self.setImageViewHeight(with: scaledImage.ratio)
                     self.setupGaussianUI()
                     self.setupGaussianFilter()
