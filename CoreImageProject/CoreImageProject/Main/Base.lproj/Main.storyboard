@@ -22,8 +22,8 @@
                                     <constraint firstAttribute="width" secondItem="vRf-12-8I6" secondAttribute="height" multiplier="1:1" id="zXH-O5-GuC"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="KIY-2s-hyi" userLabel="Slider Stack">
-                                <rect key="frame" x="57" y="445" width="300" height="316.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="KIY-2s-hyi" userLabel="Slider Stack">
+                                <rect key="frame" x="57" y="445" width="300" height="348.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Cwh-2a-6Ww" userLabel="Color1 Stack">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="52.5"/>
@@ -86,7 +86,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Wd1-Oh-CTT" userLabel="Color2 Stack">
-                                        <rect key="frame" x="0.0" y="64.5" width="300" height="52.5"/>
+                                        <rect key="frame" x="0.0" y="72.5" width="300" height="52.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjW-cM-YMS" userLabel="Color 1">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="20.5"/>
@@ -146,7 +146,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="iKr-Zl-hC7" userLabel="SliderStack1">
-                                        <rect key="frame" x="0.0" y="129" width="300" height="54.5"/>
+                                        <rect key="frame" x="0.0" y="145" width="300" height="54.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slider 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GwN-oo-Y8m" userLabel="Slider 1">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="20.5"/>
@@ -163,7 +163,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Qu6-re-qPm" userLabel="SliderStack2">
-                                        <rect key="frame" x="0.0" y="195.5" width="300" height="54.5"/>
+                                        <rect key="frame" x="0.0" y="219.5" width="300" height="54.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slider 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRc-wx-Wad" userLabel="Slider 2">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="20.5"/>
@@ -180,7 +180,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="j4B-iH-Uu5" userLabel="SliderStack3">
-                                        <rect key="frame" x="0.0" y="262" width="300" height="54.5"/>
+                                        <rect key="frame" x="0.0" y="294" width="300" height="54.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slider 3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKL-m8-mbc" userLabel="Slider 3">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="20.5"/>
@@ -205,7 +205,7 @@
                                     <segment title="Checker"/>
                                     <segment title="Contrast"/>
                                     <segment title="Sepia"/>
-                                    <segment title=""/>
+                                    <segment title="Bloom"/>
                                 </segments>
                                 <color key="selectedSegmentTintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
