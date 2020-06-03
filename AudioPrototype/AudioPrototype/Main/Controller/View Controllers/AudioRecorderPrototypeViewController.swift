@@ -54,7 +54,11 @@ class AudioRecorderPrototypeViewController: UIViewController {
     }
 }
 
-extension AudioRecorderPrototypeViewController: AVAudioRecorderDelegate {
+extension AudioRecorderPrototypeViewController: RecordingUIDelegate {
+    func updateUI() {
+        updateViews()
+    }
+    
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if let recordingURL = audioRecorder.recordingURL {
             print("Finished Recording: \(recordingURL.path)")
@@ -65,11 +69,5 @@ extension AudioRecorderPrototypeViewController: AVAudioRecorderDelegate {
         if let error = error {
             print("Error recording: \(error)")
         }
-    }
-}
-
-extension AudioRecorderPrototypeViewController: RecordingUIDelegate {
-    func updateUI() {
-        updateViews()
     }
 }

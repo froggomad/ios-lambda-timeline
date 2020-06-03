@@ -61,7 +61,11 @@ class CommentPlaybackCell: UITableViewCell {
         }
     }
 
-extension CommentPlaybackCell: AVAudioPlayerDelegate {
+extension CommentPlaybackCell: AudioPlayerUIDelegate {
+    func updateUI() {
+        updateViews()
+    }
+
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         updateViews()
     }

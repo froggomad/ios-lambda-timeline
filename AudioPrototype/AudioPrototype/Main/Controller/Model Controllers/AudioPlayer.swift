@@ -7,12 +7,17 @@
 //
 
 import AVFoundation
+import UIKit
+
+protocol AudioPlayerUIDelegate: AVAudioPlayerDelegate {
+    func updateUI()
+}
 
 class AudioPlayer {
-    var delegate: AVAudioPlayerDelegate?
+    var delegate: AudioPlayerUIDelegate?
     var timer: Timer?
 
-    init(delegate: AVAudioPlayerDelegate) {
+    init(delegate: AudioPlayerUIDelegate) {
         self.delegate = delegate
         loadAudio()
     }
@@ -25,18 +30,14 @@ class AudioPlayer {
         timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 0.030, repeats: true) { [weak self] (_) in
             guard let self = self else { return }
-            if let delegate = self.delegate as? CommentPlaybackCell {
-                delegate.updateViews()
-            }
+            self.delegate?.updateUI()
         }
     }
 
     func cancelTimer() {
         timer?.invalidate()
         timer = nil
-        if let delegate = self.delegate as? CommentPlaybackCell {
-            delegate.updateViews()
-        }
+        delegate?.updateUI()
     }
 
     ///the active Audio Player
