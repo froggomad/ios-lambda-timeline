@@ -19,6 +19,7 @@
 		B94B31D12486EE7100F65BCB /* kid_laugh.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B94B31D02486EE7100F65BCB /* kid_laugh.mp3 */; };
 		B94B31D62486FAB700F65BCB /* CommentPlaybackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94B31D52486FAB700F65BCB /* CommentPlaybackCell.swift */; };
 		B94B31D82487019B00F65BCB /* AudioCommentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94B31D72487019B00F65BCB /* AudioCommentTableViewController.swift */; };
+		B94B31DA24874F4C00F65BCB /* RecordingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94B31D924874F4C00F65BCB /* RecordingController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		B94B31D02486EE7100F65BCB /* kid_laugh.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = kid_laugh.mp3; path = AudioPrototype/kid_laugh.mp3; sourceTree = SOURCE_ROOT; };
 		B94B31D52486FAB700F65BCB /* CommentPlaybackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentPlaybackCell.swift; sourceTree = "<group>"; };
 		B94B31D72487019B00F65BCB /* AudioCommentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioCommentTableViewController.swift; sourceTree = "<group>"; };
+		B94B31D924874F4C00F65BCB /* RecordingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				B94B31CE2486EBD200F65BCB /* AudioPlayer.swift */,
+				B94B31D924874F4C00F65BCB /* RecordingController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				B94B31D82487019B00F65BCB /* AudioCommentTableViewController.swift in Sources */,
 				B94B31922486E65900F65BCB /* AudioRecorderPrototypeViewController.swift in Sources */,
 				B94B318E2486E65900F65BCB /* AppDelegate.swift in Sources */,
+				B94B31DA24874F4C00F65BCB /* RecordingController.swift in Sources */,
 				B94B31D62486FAB700F65BCB /* CommentPlaybackCell.swift in Sources */,
 				B94B31902486E65900F65BCB /* SceneDelegate.swift in Sources */,
 				B94B31CF2486EBD200F65BCB /* AudioPlayer.swift in Sources */,

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iT6-CH-35M">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -15,48 +15,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="t57-Bb-o7d">
-                                <rect key="frame" x="14" y="418" width="394" height="60"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="t57-Bb-o7d">
+                                <rect key="frame" x="152.5" y="417.5" width="109.5" height="71"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zmb-Ug-vZQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="109.5" height="20.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOB-Yt-1dm">
-                                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="MBH-Ph-dCe">
-                                                <rect key="frame" x="52" y="0.0" width="290" height="31"/>
-                                            </slider>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvK-q9-46l">
-                                                <rect key="frame" x="348" y="0.0" width="46" height="30"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOB-Yt-1dm">
+                                                <rect key="frame" x="0.0" y="0.0" width="109.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="58" translatesAutoresizingMaskIntoConstraints="NO" id="ohp-0h-fJw">
-                                        <rect key="frame" x="0.0" y="38" width="394" height="22"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hCa-RJ-pE6">
+                                        <rect key="frame" x="0.0" y="28.5" width="109.5" height="42.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kew-Ih-osj">
-                                                <rect key="frame" x="0.0" y="0.0" width="394" height="22"/>
-                                                <state key="normal" image="play.fill" catalog="system"/>
-                                                <state key="selected" image="pause.fill" catalog="system"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="109.5" height="22"/>
+                                                <state key="normal" image="mic.fill" catalog="system"/>
+                                                <state key="selected" image="stop.fill" catalog="system"/>
                                                 <connections>
-                                                    <action selector="playButtonWasTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q17-8e-7uy"/>
+                                                    <action selector="toggleRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="laT-yX-3ql"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap To Record" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YqV-jC-UrJ">
+                                                <rect key="frame" x="0.0" y="22" width="109.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="t57-Bb-o7d" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="KVi-CP-buY"/>
+                            <constraint firstItem="t57-Bb-o7d" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="vh8-CT-mO1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="recordButton" destination="Kew-Ih-osj" id="A8d-aU-oXT"/>
+                        <outlet property="timeElapsedLabel" destination="sOB-Yt-1dm" id="e3m-id-Va8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -109,7 +114,6 @@
                                                             <state key="normal" image="play.fill" catalog="system"/>
                                                             <state key="selected" image="pause.fill" catalog="system"/>
                                                             <connections>
-                                                                <action selector="playButtonWasTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TFL-B2-5wQ"/>
                                                                 <action selector="playButtonWasTapped:" destination="CaW-tx-uCU" eventType="touchUpInside" id="zUv-fw-Cj6"/>
                                                             </connections>
                                                         </button>
@@ -145,7 +149,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="mic.fill" catalog="system" width="108" height="128"/>
         <image name="pause.fill" catalog="system" width="116" height="128"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
+        <image name="stop.fill" catalog="system" width="128" height="113"/>
     </resources>
 </document>

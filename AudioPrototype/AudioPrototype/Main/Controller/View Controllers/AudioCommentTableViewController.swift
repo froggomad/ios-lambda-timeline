@@ -28,9 +28,6 @@ class AudioCommentTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "AudioCommentCell", for: indexPath) as? CommentPlaybackCell else { return UITableViewCell() }
-
-        // Configure the cell...
-
         return cell
     }
 
