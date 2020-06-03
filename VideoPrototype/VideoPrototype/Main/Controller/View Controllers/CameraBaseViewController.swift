@@ -14,6 +14,7 @@ class CameraBaseViewController: UIViewController {
         super.viewDidLoad()
 
     }
+    
     @IBAction func cameraButtonPressed(_ sender: Any) {
         let cameraController = CameraController(delegate: nil)
 

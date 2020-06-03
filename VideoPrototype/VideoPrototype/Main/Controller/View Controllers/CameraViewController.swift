@@ -33,7 +33,7 @@ class CameraViewController: UIViewController {
     }
 
     private func updateViews() {
-        recordButton.isSelected = cameraController.fileOutput.isRecording
+        recordButton.isSelected = cameraController.isRecording
     }
 
     @IBAction func recordButtonPressed(_ sender: Any) {
@@ -41,13 +41,10 @@ class CameraViewController: UIViewController {
     }
 
     private func toggleRecording() {
-        if cameraController.fileOutput.isRecording {
-            cameraController.fileOutput.stopRecording()
+        if cameraController.isRecording {
+            cameraController.stopRecording()
         } else {
-            cameraController.fileOutput.startRecording(
-                to: cameraController.newRecordingURL(),
-                recordingDelegate: self
-            )
+            cameraController.startRecording(to: self)
         }
 
     }
