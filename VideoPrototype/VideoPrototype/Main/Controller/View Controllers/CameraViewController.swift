@@ -1,0 +1,68 @@
+//
+//  CameraViewController.swift
+//  VideoPrototype
+//
+//  Created by Kenny on 6/3/20.
+//  Copyright © 2020 Hazy Studios. All rights reserved.
+//
+
+import UIKit
+import AVFoundation
+
+class CameraViewController: UIViewController {
+    lazy var cameraController = CameraController(delegate: self)
+    @IBOutlet var cameraView: CameraPreviewView!
+    var playerView: VideoPlayerView!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        cameraView.videoPlayerView.videoGravity = .resizeAspectFill
+        cameraController.setupCaptureSession()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        cameraController.captureSession.startRunning()
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        cameraController.captureSession.stopRunning()
+    }
+}
+
+extension CameraViewController: CameraUIDelegate {
+
+    func playMovie(url: URL) {
+        let player = AVPlayer(url: url)
+        if playerView == nil {
+            // setup view
+            let playerView = VideoPlayerView()
+            playerView.player = player
+            // customize the frame
+            var frame = view.bounds
+            frame.size.height = frame.size.height / 1.5
+            frame.size.width = frame.size.width / 1.5
+            frame.origin.y = view.layoutMargins.top
+            playerView.frame = frame
+            playerView.center.x = view.center.x
+            view.addSubview(playerView)
+            self.playerView = playerView
+        }
+        player.play()
+        playerView.player = player
+    }
+
+}
+
+extension CameraViewController: AVCaptureFileOutputRecordingDelegate {
+
+    func fileOutput(_ output: AVCaptureFileOutput, didStartRecordingTo fileURL: URL, from connections: [AVCaptureConnection]) {
+        print("Started Recording to file: \(fileURL)")
+    }
+
+    func fileOutput(_ output: AVCaptureFileOutput, didFinishRecordingTo outputFileURL: URL, from connections: [AVCaptureConnection], error: Error?) {
+        playMovie(url: outputFileURL)
+    }
+
+}

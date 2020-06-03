@@ -12,12 +12,9 @@ class CameraBaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    }
-}
+        CameraController(delegate: nil).requestPermissionAndShowCamera() { status in
 
-extension CameraBaseViewController: PresentCameraUIDelegate {
-    func showCamera() {
-        performSegue(withIdentifier: "ShowCamera", sender: self)
+        }
     }
+
 }

@@ -17,6 +17,8 @@
 		B94B32142488439800F65BCB /* VideoPrototypeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94B32132488439800F65BCB /* VideoPrototypeUITests.swift */; };
 		B99CECA824884F880071DF15 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99CECA724884F880071DF15 /* CameraController.swift */; };
 		B99CECAA248854700071DF15 /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99CECA9248854700071DF15 /* CameraPreviewView.swift */; };
+		B99CECAC248858370071DF15 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99CECAB248858370071DF15 /* CameraViewController.swift */; };
+		B99CECAE24885BF80071DF15 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99CECAD24885BF80071DF15 /* VideoPlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		B94B32152488439800F65BCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B99CECA724884F880071DF15 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		B99CECA9248854700071DF15 /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
+		B99CECAB248858370071DF15 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		B99CECAD24885BF80071DF15 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				B94B31F52488439600F65BCB /* CameraBaseViewController.swift */,
+				B99CECAB248858370071DF15 /* CameraViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -170,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				B99CECA9248854700071DF15 /* CameraPreviewView.swift */,
+				B99CECAD24885BF80071DF15 /* VideoPlayerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -310,6 +316,8 @@
 				B99CECAA248854700071DF15 /* CameraPreviewView.swift in Sources */,
 				B99CECA824884F880071DF15 /* CameraController.swift in Sources */,
 				B94B31F42488439600F65BCB /* SceneDelegate.swift in Sources */,
+				B99CECAC248858370071DF15 /* CameraViewController.swift in Sources */,
+				B99CECAE24885BF80071DF15 /* VideoPlayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +493,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 34P4RF23ET;
 				INFOPLIST_FILE = VideoPrototype/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -503,6 +512,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 34P4RF23ET;
 				INFOPLIST_FILE = VideoPrototype/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

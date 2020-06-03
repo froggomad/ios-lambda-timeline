@@ -9,10 +9,6 @@
 import AVFoundation
 import UIKit
 
-protocol PresentCameraUIDelegate: UIViewController {
-    func showCamera()
-}
-
 protocol CameraUIDelegate: AVCaptureFileOutputRecordingDelegate, UIViewController {
     func playMovie(url: URL)
     var cameraView: CameraPreviewView! { get set }
@@ -20,23 +16,31 @@ protocol CameraUIDelegate: AVCaptureFileOutputRecordingDelegate, UIViewControlle
 
 class CameraController {
     // MARK: - Properties -
-    weak var presentationDelegate: PresentCameraUIDelegate?
-    weak var cameraDelegate: CameraUIDelegate?
+    weak var delegate: CameraUIDelegate?
     lazy var captureSession = AVCaptureSession()
     lazy private var fileOutput = AVCaptureMovieFileOutput()
     var player: AVPlayer?
 
+    // MARK: Init
+    init(delegate: CameraUIDelegate?) {
+        self.delegate = delegate
+    }
+
     // MARK: - Permission -
-    func requestPermissionAndShowCamera() {
+    func requestPermissionAndShowCamera(completion: @escaping (Bool) -> Void) {
         let status = AVCaptureDevice.authorizationStatus(for: .video)
         switch status {
         case .authorized:
-            presentationDelegate?.showCamera()
+            DispatchQueue.main.async {
+                completion(true)
+            }
         case .denied:
             // FIXME: Open settings app
             fatalError("Show user UI to get them to give access")
         case .notDetermined:
-            requestCameraPermission()
+            requestCameraPermission() { status in
+                completion(status)
+            }
         case .restricted:
             // Parental Controls,
             // FIXME: alert your parental controls have restricted your use of the camera
@@ -47,21 +51,21 @@ class CameraController {
         }
     }
 
-    private func requestCameraPermission() {
+    private func requestCameraPermission(completion: @escaping (Bool) -> Void) {
         AVCaptureDevice.requestAccess(for: .video) { granted in
             guard granted else { fatalError("access denied") }
             DispatchQueue.main.async {
-                self.presentationDelegate?.showCamera()
+                completion(true)
             }
         }
     }
 
-    private func setupCaptureSession() {
+    func setupCaptureSession() {
         //Camera
         captureSession.beginConfiguration()
         defer {
             captureSession.commitConfiguration()
-            cameraDelegate?.cameraView.session = captureSession
+            delegate?.cameraView.session = captureSession
         }
         let camera = bestCamera()
 
