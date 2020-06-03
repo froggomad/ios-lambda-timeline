@@ -130,6 +130,7 @@ class RecordingController {
     }
 
     func startRecording() {
+        startTimer()
         let recordingURL = createNewRecordingURL()
 
         let audioFormat = AVAudioFormat(standardFormatWithSampleRate: 44_100, channels: 1)!

@@ -16,31 +16,7 @@ protocol AudioPlayerUIDelegate: AVAudioPlayerDelegate {
 
 class AudioPlayer {
     var delegate: AudioPlayerUIDelegate?
-    var timer: Timer?
-
-    init(delegate: AudioPlayerUIDelegate) {
-        self.delegate = delegate
-        loadAudio()
-    }
-
-    deinit {
-        cancelTimer()
-    }
-
-    func startTimer() {
-        timer?.invalidate()
-        timer = Timer.scheduledTimer(withTimeInterval: 0.030, repeats: true) { [weak self] (_) in
-            guard let self = self else { return }
-            self.delegate?.updateUI()
-        }
-    }
-
-    func cancelTimer() {
-        timer?.invalidate()
-        timer = nil
-        delegate?.updateUI()
-    }
-
+    private var timer: Timer?
     ///the active Audio Player
     var player: AVAudioPlayer? {
         didSet {
@@ -52,7 +28,30 @@ class AudioPlayer {
         return player?.isPlaying ?? false
     }
 
-    func loadAudio() {
+    init(delegate: AudioPlayerUIDelegate) {
+        self.delegate = delegate
+        loadAudio()
+    }
+
+    deinit {
+        cancelTimer()
+    }
+
+    private func startTimer() {
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: 0.030, repeats: true) { [weak self] (_) in
+            guard let self = self else { return }
+            self.delegate?.updateUI()
+        }
+    }
+
+    private func cancelTimer() {
+        timer?.invalidate()
+        timer = nil
+        delegate?.updateUI()
+    }
+
+    private func loadAudio() {
         guard let songURL = delegate?.recordedURL else { return }
         do {
             player = try AVAudioPlayer(contentsOf: songURL)
@@ -70,12 +69,12 @@ class AudioPlayer {
         }
     }
 
-    func play() {
+    private func play() {
         player?.play()
         startTimer()
     }
 
-    func pause() {
+    private func pause() {
         player?.pause()
         cancelTimer()
     }

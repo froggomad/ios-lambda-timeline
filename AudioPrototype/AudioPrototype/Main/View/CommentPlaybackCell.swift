@@ -17,8 +17,12 @@ class CommentPlaybackCell: UITableViewCell {
     @IBOutlet weak var timeSlider: UISlider!
 
     ///lazy in order to ensure self is available
-    lazy var audioPlayer = AudioPlayer(delegate: self)
-    var recordedURL: URL?
+    private lazy var audioPlayer = AudioPlayer(delegate: self)
+    var recordedURL: URL? {
+        didSet {
+            updateViews()
+        }
+    }
 
     private lazy var timeIntervalFormatter: DateComponentsFormatter = {
         // NOTE: DateComponentFormatter is good for minutes/hours/seconds
@@ -32,6 +36,10 @@ class CommentPlaybackCell: UITableViewCell {
     }()
 
     override func prepareForReuse() {
+        loadView()
+    }
+
+    private func loadView() {
         timeElapsedLabel.font = UIFont.monospacedDigitSystemFont(
             ofSize: timeElapsedLabel.font.pointSize,
             weight: .regular
@@ -40,27 +48,26 @@ class CommentPlaybackCell: UITableViewCell {
             ofSize: timeRemainingLabel.font.pointSize,
             weight: .regular
         )
+    }
+
+    private func updateViews() {
+        playButton.isSelected = audioPlayer.isPlaying
+        let elapsedTime = audioPlayer.player?.currentTime ?? 0
+        let duration = audioPlayer.player?.duration ?? 0
+        let timeRemaining = duration.rounded(.up) - elapsedTime.rounded(.up)
+        timeElapsedLabel.text = timeIntervalFormatter.string(from: elapsedTime)
+        timeRemainingLabel.text = timeIntervalFormatter.string(from: timeRemaining)
+
+        timeSlider.minimumValue = 0
+        timeSlider.maximumValue = Float(duration)
+        timeSlider.value = Float(elapsedTime)
+    }
+
+    @IBAction func playButtonWasTapped(_ sender: UIButton) {
+        audioPlayer.togglePlaying()
         updateViews()
     }
-        func updateViews() {
-            playButton.isSelected = audioPlayer.isPlaying
-            let elapsedTime = audioPlayer.player?.currentTime ?? 0
-            let duration = audioPlayer.player?.duration ?? 0
-            let timeRemaining = duration.rounded(.up) - elapsedTime.rounded(.up)
-
-            timeElapsedLabel.text = timeIntervalFormatter.string(from: elapsedTime)
-            timeRemainingLabel.text = timeIntervalFormatter.string(from: timeRemaining)
-
-            timeSlider.minimumValue = 0
-            timeSlider.maximumValue = Float(duration)
-            timeSlider.value = Float(elapsedTime)
-        }
-
-        @IBAction func playButtonWasTapped(_ sender: UIButton) {
-            audioPlayer.togglePlaying()
-            updateViews()
-        }
-    }
+}
 
 extension CommentPlaybackCell: AudioPlayerUIDelegate {
     func updateUI() {

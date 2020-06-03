@@ -46,10 +46,6 @@ class AudioRecorderPrototypeViewController: UIViewController {
 
     
     // MARK: - Actions
-    @IBAction func updateCurrentTime(_ sender: UISlider) {
-
-    }
-
     @IBAction func toggleRecording(_ sender: Any) {
         audioRecorder.toggleRecording()
     }
