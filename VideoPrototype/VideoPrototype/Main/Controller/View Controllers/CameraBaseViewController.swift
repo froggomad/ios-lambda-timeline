@@ -8,13 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CameraBaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
-
-
 }
 
+extension CameraBaseViewController: PresentCameraUIDelegate {
+    func showCamera() {
+        performSegue(withIdentifier: "ShowCamera", sender: self)
+    }
+}
