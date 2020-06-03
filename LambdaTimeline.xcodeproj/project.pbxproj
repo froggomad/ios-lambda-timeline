@@ -81,6 +81,27 @@
 			remoteGlobalIDString = B94B31AB2486E65C00F65BCB;
 			remoteInfo = AudioPrototypeUITests;
 		};
+		B99CEC9C24884DAA0071DF15 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B99CEC9024884DAA0071DF15 /* VideoPrototype.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B94B31EE2488439600F65BCB;
+			remoteInfo = VideoPrototype;
+		};
+		B99CEC9E24884DAA0071DF15 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B99CEC9024884DAA0071DF15 /* VideoPrototype.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B94B32042488439800F65BCB;
+			remoteInfo = VideoPrototypeTests;
+		};
+		B99CECA024884DAA0071DF15 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B99CEC9024884DAA0071DF15 /* VideoPrototype.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B94B320F2488439800F65BCB;
+			remoteInfo = VideoPrototypeUITests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +140,7 @@
 		B967C7FB2485F1640084245E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B967C8002486088E0084245E /* UIImage+Scaling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Scaling.swift"; sourceTree = "<group>"; };
 		B967C80524860EFB0084245E /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		B99CEC9024884DAA0071DF15 /* VideoPrototype.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = VideoPrototype.xcodeproj; path = VideoPrototype/VideoPrototype.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +171,7 @@
 				46463779216FDE4B00E7FF73 /* Products */,
 				2B7D7DE8669C7C706445FCCC /* Pods */,
 				7C2A25429FC0F968FC1D35E7 /* Frameworks */,
+				B99CEC9024884DAA0071DF15 /* VideoPrototype.xcodeproj */,
 				B9139968248588E10040F58F /* CoreImageProject.xcodeproj */,
 				B94B31BD2486E65C00F65BCB /* AudioPrototype.xcodeproj */,
 			);
@@ -306,6 +329,16 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		B99CEC9124884DAA0071DF15 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B99CEC9D24884DAA0071DF15 /* VideoPrototype.app */,
+				B99CEC9F24884DAA0071DF15 /* VideoPrototypeTests.xctest */,
+				B99CECA124884DAA0071DF15 /* VideoPrototypeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -365,6 +398,10 @@
 					ProductGroup = B9139969248588E10040F58F /* Products */;
 					ProjectRef = B9139968248588E10040F58F /* CoreImageProject.xcodeproj */;
 				},
+				{
+					ProductGroup = B99CEC9124884DAA0071DF15 /* Products */;
+					ProjectRef = B99CEC9024884DAA0071DF15 /* VideoPrototype.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -414,6 +451,27 @@
 			fileType = wrapper.cfbundle;
 			path = AudioPrototypeUITests.xctest;
 			remoteRef = B94B31C72486E65D00F65BCB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B99CEC9D24884DAA0071DF15 /* VideoPrototype.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = VideoPrototype.app;
+			remoteRef = B99CEC9C24884DAA0071DF15 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B99CEC9F24884DAA0071DF15 /* VideoPrototypeTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = VideoPrototypeTests.xctest;
+			remoteRef = B99CEC9E24884DAA0071DF15 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B99CECA124884DAA0071DF15 /* VideoPrototypeUITests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = VideoPrototypeUITests.xctest;
+			remoteRef = B99CECA024884DAA0071DF15 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
