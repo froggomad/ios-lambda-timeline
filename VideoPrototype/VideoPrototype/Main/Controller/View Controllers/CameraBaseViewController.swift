@@ -12,8 +12,15 @@ class CameraBaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        CameraController(delegate: nil).requestPermissionAndShowCamera() { status in
 
+    }
+    @IBAction func cameraButtonPressed(_ sender: Any) {
+        let cameraController = CameraController(delegate: nil)
+
+        cameraController.requestPermissionAndShowCamera { (status) in
+            if status {
+                self.performSegue(withIdentifier: "ShowCamera", sender: nil)
+            }
         }
     }
 

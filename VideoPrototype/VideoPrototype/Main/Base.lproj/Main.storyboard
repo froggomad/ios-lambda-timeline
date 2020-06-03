@@ -23,7 +23,8 @@
                                 </constraints>
                                 <state key="normal" image="camera" catalog="system"/>
                                 <connections>
-                                    <segue destination="GpI-Y8-JRx" kind="show" id="Y5l-4e-gW5"/>
+                                    <action selector="cameraButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eZ5-yE-4mf"/>
+                                    <segue destination="GpI-Y8-JRx" kind="show" identifier="ShowCamera" id="Y5l-4e-gW5"/>
                                 </connections>
                             </button>
                         </subviews>
