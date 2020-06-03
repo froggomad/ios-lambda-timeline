@@ -30,6 +30,8 @@
 		46D571F52173CF3E00E7FF73 /* UIImage+Ratio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D571F42173CF3E00E7FF73 /* UIImage+Ratio.swift */; };
 		46D571F82173FC2700E7FF73 /* ImagePostDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D571F72173FC2700E7FF73 /* ImagePostDetailTableViewController.swift */; };
 		B94B317B24867E9600F65BCB /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94B317A24867E9600F65BCB /* Filter.swift */; };
+		B94B31E124876DC700F65BCB /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94B31DF24876DC700F65BCB /* AudioPlayer.swift */; };
+		B94B31E224876DC700F65BCB /* RecordingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94B31E024876DC700F65BCB /* RecordingController.swift */; };
 		B967C7FF2485F1640084245E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B967C7FB2485F1640084245E /* GoogleService-Info.plist */; };
 		B967C8012486088E0084245E /* UIImage+Scaling.swift in Sources */ = {isa = PBXBuildFile; fileRef = B967C8002486088E0084245E /* UIImage+Scaling.swift */; };
 		B967C80624860EFB0084245E /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B967C80524860EFB0084245E /* Alert.swift */; };
@@ -112,6 +114,8 @@
 		B9139968248588E10040F58F /* CoreImageProject.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CoreImageProject.xcodeproj; path = CoreImageProject/CoreImageProject.xcodeproj; sourceTree = "<group>"; };
 		B94B317A24867E9600F65BCB /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		B94B31BD2486E65C00F65BCB /* AudioPrototype.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AudioPrototype.xcodeproj; path = AudioPrototype/AudioPrototype.xcodeproj; sourceTree = "<group>"; };
+		B94B31DF24876DC700F65BCB /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		B94B31E024876DC700F65BCB /* RecordingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingController.swift; sourceTree = "<group>"; };
 		B967C7FB2485F1640084245E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B967C8002486088E0084245E /* UIImage+Scaling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Scaling.swift"; sourceTree = "<group>"; };
 		B967C80524860EFB0084245E /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -207,6 +211,8 @@
 		4646379A2170090900E7FF73 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B94B31DF24876DC700F65BCB /* AudioPlayer.swift */,
+				B94B31E024876DC700F65BCB /* RecordingController.swift */,
 				4646379B2170091A00E7FF73 /* PostController.swift */,
 			);
 			path = "Model Controllers";
@@ -495,7 +501,9 @@
 				46CFE6FB21714E6100E7FF73 /* Author.swift in Sources */,
 				46CFE6F92170862C00E7FF73 /* ShiftableViewController.swift in Sources */,
 				4646377C216FDE4B00E7FF73 /* AppDelegate.swift in Sources */,
+				B94B31E224876DC700F65BCB /* RecordingController.swift in Sources */,
 				46CFE6FD217154F500E7FF73 /* Networking.swift in Sources */,
+				B94B31E124876DC700F65BCB /* AudioPlayer.swift in Sources */,
 				B967C80624860EFB0084245E /* Alert.swift in Sources */,
 				46CFE6F521707D0000E7FF73 /* ImagePostViewController.swift in Sources */,
 				46CFE6FF2171556D00E7FF73 /* ConcurrentOperation.swift in Sources */,

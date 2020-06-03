@@ -11,6 +11,7 @@ import UIKit
 
 protocol AudioPlayerUIDelegate: AVAudioPlayerDelegate {
     func updateUI()
+    var recordedURL: URL? { get set }
 }
 
 class AudioPlayer {
@@ -52,7 +53,7 @@ class AudioPlayer {
     }
 
     func loadAudio() {
-        guard let songURL = Bundle.main.url(forResource: "kid_laugh", withExtension: "mp3") else { return }
+        guard let songURL = delegate?.recordedURL else { return }
         do {
             player = try AVAudioPlayer(contentsOf: songURL)
         } catch let audioError {

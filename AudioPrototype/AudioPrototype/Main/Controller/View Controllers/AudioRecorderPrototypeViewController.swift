@@ -13,6 +13,7 @@ class AudioRecorderPrototypeViewController: UIViewController {
     // MARK: - Outlets -
     @IBOutlet var recordButton: UIButton!
     @IBOutlet var timeElapsedLabel: UILabel!
+    var recorderURL: URL?
 
     // MARK: - Properties -
     //lazy to ensure self is available
@@ -52,16 +53,22 @@ class AudioRecorderPrototypeViewController: UIViewController {
     @IBAction func toggleRecording(_ sender: Any) {
         audioRecorder.toggleRecording()
     }
+
+    // MARK: - Navigation -
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? AudioCommentTableViewController else { return }
+        destination.recordedURL = recorderURL
+    }
 }
 
 extension AudioRecorderPrototypeViewController: RecordingUIDelegate {
     func updateUI() {
         updateViews()
     }
-    
+
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if let recordingURL = audioRecorder.recordingURL {
-            print("Finished Recording: \(recordingURL.path)")
+            self.recorderURL = recordingURL
         }
     }
 

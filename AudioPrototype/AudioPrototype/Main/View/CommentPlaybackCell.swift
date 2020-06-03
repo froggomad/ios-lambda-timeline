@@ -18,6 +18,7 @@ class CommentPlaybackCell: UITableViewCell {
 
     ///lazy in order to ensure self is available
     lazy var audioPlayer = AudioPlayer(delegate: self)
+    var recordedURL: URL?
 
     private lazy var timeIntervalFormatter: DateComponentsFormatter = {
         // NOTE: DateComponentFormatter is good for minutes/hours/seconds

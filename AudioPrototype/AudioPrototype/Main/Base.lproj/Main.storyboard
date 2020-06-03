@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SBu-YW-ads">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="t57-Bb-o7d">
-                                <rect key="frame" x="152.5" y="417.5" width="109.5" height="71"/>
+                                <rect key="frame" x="152.5" y="439.5" width="109.5" height="71"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zmb-Ug-vZQ">
                                         <rect key="frame" x="0.0" y="0.0" width="109.5" height="20.5"/>
@@ -58,6 +58,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="zJ7-Qw-i8j">
+                        <barButtonItem key="rightBarButtonItem" title="Check Playback" id="arW-8M-mNK">
+                            <connections>
+                                <segue destination="iT6-CH-35M" kind="show" id="Hj3-2Z-hSg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="recordButton" destination="Kew-Ih-osj" id="A8d-aU-oXT"/>
                         <outlet property="timeElapsedLabel" destination="sOB-Yt-1dm" id="e3m-id-Va8"/>
@@ -65,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+            <point key="canvasLocation" x="1042.0289855072465" y="138.61607142857142"/>
         </scene>
         <!--Audio Comment Table View Controller-->
         <scene sceneID="BwH-Sx-GUr">
@@ -142,10 +149,29 @@
                             <outlet property="delegate" destination="iT6-CH-35M" id="hND-yd-gwv"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="PEm-1h-GHB"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gn4-vp-UZm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1080" y="139"/>
+            <point key="canvasLocation" x="1989.8550724637682" y="138.61607142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BNl-j0-Zrl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SBu-YW-ads" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wE4-0f-hkJ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="iAB-Hb-fsx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S2l-2i-4q7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
         </scene>
     </scenes>
     <resources>

@@ -54,11 +54,11 @@
 		B94B31AB2486E65C00F65BCB /* AudioPrototypeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AudioPrototypeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B94B31AF2486E65C00F65BCB /* AudioPrototypeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPrototypeUITests.swift; sourceTree = "<group>"; };
 		B94B31B12486E65C00F65BCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B94B31CE2486EBD200F65BCB /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		B94B31CE2486EBD200F65BCB /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AudioPlayer.swift; path = "../../../../../LambdaTimeline/Model Controllers/AudioPlayer.swift"; sourceTree = "<group>"; };
 		B94B31D02486EE7100F65BCB /* kid_laugh.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = kid_laugh.mp3; path = AudioPrototype/kid_laugh.mp3; sourceTree = SOURCE_ROOT; };
 		B94B31D52486FAB700F65BCB /* CommentPlaybackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentPlaybackCell.swift; sourceTree = "<group>"; };
 		B94B31D72487019B00F65BCB /* AudioCommentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioCommentTableViewController.swift; sourceTree = "<group>"; };
-		B94B31D924874F4C00F65BCB /* RecordingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingController.swift; sourceTree = "<group>"; };
+		B94B31D924874F4C00F65BCB /* RecordingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecordingController.swift; path = "../../../../../LambdaTimeline/Model Controllers/RecordingController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

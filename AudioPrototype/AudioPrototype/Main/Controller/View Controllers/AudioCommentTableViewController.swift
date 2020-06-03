@@ -9,7 +9,11 @@
 import UIKit
 
 class AudioCommentTableViewController: UITableViewController {
+    // MARK: - Properties -
+    var recordedURL: URL?
 
+
+    // MARK: - View Lifecycle -
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,6 +32,7 @@ class AudioCommentTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "AudioCommentCell", for: indexPath) as? CommentPlaybackCell else { return UITableViewCell() }
+        cell.recordedURL = recordedURL
         return cell
     }
 
