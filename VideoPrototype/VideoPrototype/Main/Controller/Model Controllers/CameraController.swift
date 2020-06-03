@@ -18,7 +18,7 @@ class CameraController {
     // MARK: - Properties -
     weak var delegate: CameraUIDelegate?
     lazy var captureSession = AVCaptureSession()
-    lazy private var fileOutput = AVCaptureMovieFileOutput()
+    lazy var fileOutput = AVCaptureMovieFileOutput()
     var player: AVPlayer?
 
     // MARK: Init
@@ -103,7 +103,7 @@ class CameraController {
         fatalError("This operation requires a camera!")
     }
 
-    private func newRecordingURL() -> URL {
+    func newRecordingURL() -> URL {
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
 
         let formatter = ISO8601DateFormatter()

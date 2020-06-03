@@ -49,7 +49,22 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fxe-wg-dAC" customClass="CameraPreviewView" customModule="VideoPrototype" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xmm-dc-5pG">
+                                        <rect key="frame" x="149" y="666" width="116" height="116"/>
+                                        <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="Record"/>
+                                        <state key="selected" image="Stop"/>
+                                        <connections>
+                                            <action selector="recordButtonPressed:" destination="GpI-Y8-JRx" eventType="touchUpInside" id="3tp-Uo-Vlh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="xmm-dc-5pG" secondAttribute="bottom" constant="36" id="1gR-QG-uGH"/>
+                                    <constraint firstItem="xmm-dc-5pG" firstAttribute="centerX" secondItem="Fxe-wg-dAC" secondAttribute="centerX" id="Fji-tO-gcY"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -64,6 +79,7 @@
                     <navigationItem key="navigationItem" id="YRT-Kt-jHY"/>
                     <connections>
                         <outlet property="cameraView" destination="Fxe-wg-dAC" id="Pz3-mm-kTW"/>
+                        <outlet property="recordButton" destination="xmm-dc-5pG" id="JTH-Sz-5kY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fk8-Lg-yso" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -72,6 +88,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Record" width="116" height="116"/>
+        <image name="Stop" width="116" height="116"/>
         <image name="camera" catalog="system" width="128" height="96"/>
     </resources>
 </document>

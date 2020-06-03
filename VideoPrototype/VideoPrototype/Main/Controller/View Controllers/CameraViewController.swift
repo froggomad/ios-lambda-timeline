@@ -11,8 +11,10 @@ import AVFoundation
 
 class CameraViewController: UIViewController {
     lazy var cameraController = CameraController(delegate: self)
-    @IBOutlet var cameraView: CameraPreviewView!
     var playerView: VideoPlayerView!
+
+    @IBOutlet var cameraView: CameraPreviewView!
+    @IBOutlet var recordButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +30,26 @@ class CameraViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         cameraController.captureSession.stopRunning()
+    }
+
+    private func updateViews() {
+        recordButton.isSelected = cameraController.fileOutput.isRecording
+    }
+
+    @IBAction func recordButtonPressed(_ sender: Any) {
+        toggleRecording()
+    }
+
+    private func toggleRecording() {
+        if cameraController.fileOutput.isRecording {
+            cameraController.fileOutput.stopRecording()
+        } else {
+            cameraController.fileOutput.startRecording(
+                to: cameraController.newRecordingURL(),
+                recordingDelegate: self
+            )
+        }
+
     }
 }
 
