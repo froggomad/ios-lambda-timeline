@@ -9,7 +9,7 @@
 import AVFoundation
 import UIKit
 
-protocol CameraUIDelegate: AVCaptureFileOutputRecordingDelegate, UIViewController {
+protocol CameraUIDelegate: AVCaptureFileOutputRecordingDelegate {
     func playMovie(url: URL)
     var cameraView: CameraPreviewView! { get set }
 }

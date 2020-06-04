@@ -78,10 +78,12 @@ extension CameraViewController: AVCaptureFileOutputRecordingDelegate {
 
     func fileOutput(_ output: AVCaptureFileOutput, didStartRecordingTo fileURL: URL, from connections: [AVCaptureConnection]) {
         print("Started Recording to file: \(fileURL)")
+        updateViews()
     }
 
     func fileOutput(_ output: AVCaptureFileOutput, didFinishRecordingTo outputFileURL: URL, from connections: [AVCaptureConnection], error: Error?) {
         playMovie(url: outputFileURL)
+        updateViews()
     }
 
 }
