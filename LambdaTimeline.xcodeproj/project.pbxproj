@@ -35,6 +35,7 @@
 		B967C7FF2485F1640084245E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B967C7FB2485F1640084245E /* GoogleService-Info.plist */; };
 		B967C8012486088E0084245E /* UIImage+Scaling.swift in Sources */ = {isa = PBXBuildFile; fileRef = B967C8002486088E0084245E /* UIImage+Scaling.swift */; };
 		B967C80624860EFB0084245E /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B967C80524860EFB0084245E /* Alert.swift */; };
+		B99CECB2248898FD0071DF15 /* AudioRecorderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99CECB1248898FD0071DF15 /* AudioRecorderViewController.swift */; };
 		E453457955DF907FCBD117F1 /* Pods_LambdaTimeline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA39CACB677861CF84322FB5 /* Pods_LambdaTimeline.framework */; };
 /* End PBXBuildFile section */
 
@@ -119,6 +120,7 @@
 		B967C7FB2485F1640084245E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B967C8002486088E0084245E /* UIImage+Scaling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Scaling.swift"; sourceTree = "<group>"; };
 		B967C80524860EFB0084245E /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		B99CECB1248898FD0071DF15 /* AudioRecorderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +227,7 @@
 				46A0366921700F5100E7FF73 /* PostsCollectionViewController.swift */,
 				46CFE6F421707D0000E7FF73 /* ImagePostViewController.swift */,
 				46D571F72173FC2700E7FF73 /* ImagePostDetailTableViewController.swift */,
+				B99CECB1248898FD0071DF15 /* AudioRecorderViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 			files = (
 				46A0366D2170158900E7FF73 /* SignInViewController.swift in Sources */,
 				B967C8012486088E0084245E /* UIImage+Scaling.swift in Sources */,
+				B99CECB2248898FD0071DF15 /* AudioRecorderViewController.swift in Sources */,
 				46CFE6FB21714E6100E7FF73 /* Author.swift in Sources */,
 				46CFE6F92170862C00E7FF73 /* ShiftableViewController.swift in Sources */,
 				4646377C216FDE4B00E7FF73 /* AppDelegate.swift in Sources */,
@@ -667,7 +671,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 34P4RF23ET;
 				INFOPLIST_FILE = "$(SRCROOT)/LambdaTimeline/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -687,7 +691,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 34P4RF23ET;
 				INFOPLIST_FILE = "$(SRCROOT)/LambdaTimeline/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
