@@ -10,6 +10,7 @@ import AVFoundation
 import UIKit
 
 protocol CameraUIDelegate: AVCaptureFileOutputRecordingDelegate {
+    //currently how I get the URL to the UI Delegate
     func playMovie(url: URL)
     var cameraView: CameraPreviewView! { get set }
 }

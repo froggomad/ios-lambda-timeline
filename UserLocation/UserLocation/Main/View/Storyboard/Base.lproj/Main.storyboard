@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AkL-4W-QlN">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map Selection View-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MapSelectionView" customModule="UserLocation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="loX-sH-dbl">
+                        <barButtonItem key="rightBarButtonItem" image="map.fill" catalog="system" id="fOp-Uo-xSe">
+                            <connections>
+                                <action selector="viewMapButtonPressed:" destination="BYZ-38-t0r" id="0bM-Vn-cJR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="La7-hU-Mbj" kind="show" identifier="ShowMap" id="iLV-0d-ry4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042.0289855072465" y="102.45535714285714"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="l3c-cO-Iop">
+            <objects>
+                <viewController id="La7-hU-Mbj" customClass="MapViewController" customModule="UserLocation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TvP-Kz-j60">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3OY-F6-3bd">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="3OY-F6-3bd" firstAttribute="top" secondItem="j0J-f9-7AH" secondAttribute="top" id="C6j-u2-Nwb"/>
+                            <constraint firstItem="3OY-F6-3bd" firstAttribute="leading" secondItem="j0J-f9-7AH" secondAttribute="leading" id="HvI-BW-00o"/>
+                            <constraint firstItem="j0J-f9-7AH" firstAttribute="trailing" secondItem="3OY-F6-3bd" secondAttribute="trailing" id="Si9-XZ-wCv"/>
+                            <constraint firstItem="j0J-f9-7AH" firstAttribute="bottom" secondItem="3OY-F6-3bd" secondAttribute="bottom" id="fTa-eR-Zxj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="j0J-f9-7AH"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="BMk-L5-Jd2"/>
+                    <connections>
+                        <outlet property="mapView" destination="3OY-F6-3bd" id="0ph-LD-lba"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="waJ-r2-f6b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1988" y="102"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0nI-tV-3fk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AkL-4W-QlN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8SR-9R-9e2">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Nta-tU-EhB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j4U-0f-Nl8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="102.45535714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="map.fill" catalog="system" width="128" height="113"/>
+    </resources>
+</document>

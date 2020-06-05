@@ -60,6 +60,11 @@
                                             <action selector="recordButtonPressed:" destination="GpI-Y8-JRx" eventType="touchUpInside" id="3tp-Uo-Vlh"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aa2-aI-2tW">
+                                        <rect key="frame" x="371" y="4" width="24" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="camera.rotate" catalog="system"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
@@ -92,5 +97,6 @@
         <image name="Record" width="116" height="116"/>
         <image name="Stop" width="116" height="116"/>
         <image name="camera" catalog="system" width="128" height="96"/>
+        <image name="camera.rotate" catalog="system" width="128" height="96"/>
     </resources>
 </document>
